@@ -16,7 +16,7 @@ node{
 	}
 	stage('run on google Kubernetes') {
 		
-    sh "kubectl run jenkintest --replicas=1 --image=gcr.io/sandbox-khl/jenkintest:latest --port=8080"
+    sh "kubectl run jenkintest --image=gcr.io/sandbox-khl/jenkintest:latest --port=8080"
 	sh "kubectl expose deployment jenkintest --type=LoadBalancer "
 	}
 
